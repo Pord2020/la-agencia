@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { describe, expect, it, vi } from "vitest";
+import { basename, delimiter } from "node:path";
 import {
   listAgents,
   loadAgent,
@@ -47,17 +48,18 @@ describe("runtime metadata", () => {
     expect(candidates).toContain(
       "/Applications/Cursor.app/Contents/Resources/app/bin/cursor",
     );
-    expect(candidates.some((candidate) => candidate.endsWith("/claude"))).toBe(
-      true,
-    );
+    expect(
+      candidates.some((candidate) => basename(candidate) === "claude"),
+    ).toBe(true);
     expect(candidates.some((candidate) => candidate.includes("codex"))).toBe(
       true,
     );
     expect(candidates).toContain("/Applications/Kimi.app/Contents/MacOS/Kimi");
     expect(Array.isArray(extraBinDirs())).toBe(true);
+    expect(new Set(candidates).size).toBe(candidates.length);
     const previousPath = process.env.PATH;
     enrichPath();
-    expect(process.env.PATH).toContain(previousPath?.split(":")[0] || "");
+    expect(process.env.PATH).toContain(previousPath?.split(delimiter)[0] || "");
   });
 });
 

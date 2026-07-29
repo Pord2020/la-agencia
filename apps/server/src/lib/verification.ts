@@ -13,6 +13,7 @@ import { promisify } from "node:util";
 import type { SprintTask } from "@la-agencia/shared";
 import { assertSafeWorkspace, ensureDir } from "./paths.js";
 import { estimateTokensFromText, recordUsage } from "./costLedger.js";
+import { npmCommand } from "./npmCommand.js";
 
 const execFileAsync = promisify(execFile);
 
@@ -31,22 +32,29 @@ function detectCommands(workspace: string): VerificationCommand[] {
       };
       const commands: VerificationCommand[] = [];
       if (pkg.scripts?.typecheck) {
+        const invocation = npmCommand(["run", "typecheck"]);
         commands.push({
-          bin: "npm",
-          args: ["run", "typecheck"],
+          bin: invocation.bin,
+          args: invocation.args,
           label: "Typecheck",
         });
       }
       if (pkg.scripts?.test) {
         const extra = /vitest/.test(pkg.scripts.test) ? ["--", "--run"] : [];
+        const invocation = npmCommand(["run", "test", ...extra]);
         commands.push({
-          bin: "npm",
-          args: ["run", "test", ...extra],
+          bin: invocation.bin,
+          args: invocation.args,
           label: "Tests",
         });
       }
       if (pkg.scripts?.build) {
-        commands.push({ bin: "npm", args: ["run", "build"], label: "Build" });
+        const invocation = npmCommand(["run", "build"]);
+        commands.push({
+          bin: invocation.bin,
+          args: invocation.args,
+          label: "Build",
+        });
       }
       return commands;
     } catch {

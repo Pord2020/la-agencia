@@ -14,6 +14,7 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { publish } from "./events.js";
+import { npmCommand } from "./npmCommand.js";
 import { assertSafeWorkspace } from "./paths.js";
 
 const execFileAsync = promisify(execFile);
@@ -66,9 +67,13 @@ function previewScript(workspace: string): "preview" | "dev" | null {
   return null;
 }
 
-async function waitForHttp(url: string): Promise<void> {
+async function waitForHttp(
+  url: string,
+  isCancelled: () => boolean = () => false,
+): Promise<void> {
   const deadline = Date.now() + 30_000;
   while (Date.now() < deadline) {
+    if (isCancelled()) throw new Error("PREVIEW_START_CANCELLED");
     try {
       const response = await fetch(url);
       if (response.status < 500) return;
@@ -78,6 +83,34 @@ async function waitForHttp(url: string): Promise<void> {
     await new Promise((resolve) => setTimeout(resolve, 300));
   }
   throw new Error("PREVIEW_START_TIMEOUT");
+}
+
+async function waitForPreview(child: ChildProcess, url: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    let finished = false;
+    const settle = (result: "ready" | Error) => {
+      if (finished) return;
+      finished = true;
+      child.off("error", onError);
+      child.off("exit", onExit);
+      if (result === "ready") resolve();
+      else reject(result);
+    };
+    const onError = (error: Error) => settle(error);
+    const onExit = (code: number | null, signal: NodeJS.Signals | null) =>
+      settle(
+        new Error(
+          `PREVIEW_STOPPED:${code ?? "unknown"}:${signal ?? "no-signal"}`,
+        ),
+      );
+    child.once("error", onError);
+    child.once("exit", onExit);
+    void waitForHttp(url, () => finished).then(
+      () => settle("ready"),
+      (error) =>
+        settle(error instanceof Error ? error : new Error(String(error))),
+    );
+  });
 }
 
 /** Starts a project-owned preview on an OS-assigned loopback port. */
@@ -90,18 +123,23 @@ export async function startLocalPreview(input: {
   const script = previewScript(workspace);
   if (!script) throw new Error("PREVIEW_SCRIPT_NOT_FOUND");
   const port = await freePort();
-  const child = spawn(
-    "npm",
-    ["run", script, "--", "--host", "127.0.0.1", "--port", String(port)],
-    {
-      cwd: workspace,
-      env: { ...process.env, BROWSER: "none" },
-      stdio: ["ignore", "pipe", "pipe"],
-    },
-  );
+  const invocation = npmCommand([
+    "run",
+    script,
+    "--",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    String(port),
+  ]);
+  const child = spawn(invocation.bin, invocation.args, {
+    cwd: workspace,
+    env: { ...process.env, BROWSER: "none" },
+    stdio: ["ignore", "pipe", "pipe"],
+  });
   const localUrl = `http://127.0.0.1:${port}`;
   try {
-    await waitForHttp(localUrl);
+    await waitForPreview(child, localUrl);
   } catch (error) {
     child.kill("SIGTERM");
     throw error;

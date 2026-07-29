@@ -73,7 +73,7 @@ describe("workspace verification", () => {
       sprintNumber: 4,
       goal: "A clear flow",
     });
-    expect(path).toContain(".agency/artifacts");
+    expect(path).toContain(join(".agency", "artifacts"));
     expect(readFileSync(path, "utf8")).toContain("flowchart TD");
   });
 });
