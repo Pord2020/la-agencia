@@ -113,16 +113,39 @@ function generatePng(size) {
   ]);
 }
 
+function generateIco(sizes) {
+  const images = sizes.map((size) => ({ size, png: generatePng(size) }));
+  const directory = Buffer.alloc(6 + images.length * 16);
+  directory.writeUInt16LE(0, 0);
+  directory.writeUInt16LE(1, 2);
+  directory.writeUInt16LE(images.length, 4);
+  let offset = directory.length;
+  for (const [index, image] of images.entries()) {
+    const entry = 6 + index * 16;
+    directory.writeUInt8(image.size >= 256 ? 0 : image.size, entry);
+    directory.writeUInt8(image.size >= 256 ? 0 : image.size, entry + 1);
+    directory.writeUInt8(0, entry + 2);
+    directory.writeUInt8(0, entry + 3);
+    directory.writeUInt16LE(1, entry + 4);
+    directory.writeUInt16LE(32, entry + 6);
+    directory.writeUInt32LE(image.png.length, entry + 8);
+    directory.writeUInt32LE(offset, entry + 12);
+    offset += image.png.length;
+  }
+  return Buffer.concat([directory, ...images.map((image) => image.png)]);
+}
+
 const outputs = [
-  ["icon.png", 128],
-  ["128x128.png", 128],
-  ["32x32.png", 32],
+  ["icon.png", () => generatePng(128)],
+  ["128x128.png", () => generatePng(128)],
+  ["32x32.png", () => generatePng(32)],
+  ["icon.ico", () => generateIco([32, 128])],
 ];
 
 mkdirSync(outputDirectory, { recursive: true });
-for (const [name, size] of outputs) {
+for (const [name, generate] of outputs) {
   const path = resolve(outputDirectory, name);
-  const expected = generatePng(size);
+  const expected = generate();
   if (checkOnly) {
     let actual;
     try {
