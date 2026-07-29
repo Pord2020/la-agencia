@@ -1,0 +1,9 @@
+<!-- SPDX-FileCopyrightText: 2026 La Agencia contributors -->
+<!-- SPDX-License-Identifier: MIT -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">La Agencia monogram</title>
+  <rect width="128" height="128" rx="20" fill="#1a1a2e"/>
+  <rect x="6" y="6" width="116" height="116" rx="15" fill="none" stroke="#f5efe0" stroke-width="6"/>
+  <path d="M24 28h14v46h22v14H24z" fill="#f3c969"/>
+  <path d="M84 28 58 88h15l5-13h20l5 13h15L92 28zm0 33 4-11 4 11z" fill="#f3c969" fill-rule="evenodd"/>
+</svg>

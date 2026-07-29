@@ -1,0 +1,31 @@
+[package]
+name = "la-agencia"
+version = "0.4.0"
+description = "La Agencia — consultora de agentes local (shell Tauri)"
+authors = ["La Agencia contributors"]
+edition = "2021"
+license = "MIT"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-single-instance = "2"
+rand = "0.9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["time"] }
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+
+[lib]
+name = "la_agencia_lib"
+# v0.4 targets desktop only. Mobile-only static and dynamic libraries multiply
+# release link time and are reintroduced only if a supported mobile target ships.
+crate-type = ["rlib"]
+
+[profile.release.package.la-agencia]
+# The shell only supervises I/O; modest optimization keeps release builds practical.
+opt-level = 1

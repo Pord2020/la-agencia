@@ -1,0 +1,148 @@
+name: Signed desktop release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            label: macos
+            tauri_args: ""
+          - os: ubuntu-22.04
+            label: linux
+            tauri_args: ""
+          - os: windows-latest
+            label: windows
+            tauri_args: "--config src-tauri/tauri.windows-ci.conf.json"
+    runs-on: ${{ matrix.os }}
+    env:
+      TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+      APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+      APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+      APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+      APPLE_ID: ${{ secrets.APPLE_ID }}
+      APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
+      WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: apps/desktop/src-tauri
+      - name: Install Linux desktop dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf xvfb
+      - run: npm ci
+      - run: python -m pip install 'reuse[charset-normalizer]==6.2.0'
+      - name: Refuse unsigned updater artifacts
+        shell: bash
+        run: |
+          test -n "$TAURI_SIGNING_PRIVATE_KEY" || {
+            echo "::error::TAURI_SIGNING_PRIVATE_KEY is required"
+            exit 1
+          }
+      - name: Refuse unnotarized macOS packages
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          for name in APPLE_CERTIFICATE APPLE_CERTIFICATE_PASSWORD APPLE_SIGNING_IDENTITY APPLE_ID APPLE_PASSWORD APPLE_TEAM_ID; do
+            test -n "${!name}" || {
+              echo "::error::$name is required"
+              exit 1
+            }
+          done
+      - name: Import Windows signing certificate
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          if (-not $env:WINDOWS_CERTIFICATE -or -not $env:WINDOWS_CERTIFICATE_PASSWORD) {
+            throw "WINDOWS_CERTIFICATE and WINDOWS_CERTIFICATE_PASSWORD are required"
+          }
+          New-Item -ItemType Directory -Force -Path certificate | Out-Null
+          Set-Content -Path certificate/certificate.b64 -Value $env:WINDOWS_CERTIFICATE
+          certutil -decode certificate/certificate.b64 certificate/certificate.pfx | Out-Null
+          $password = ConvertTo-SecureString -String $env:WINDOWS_CERTIFICATE_PASSWORD -Force -AsPlainText
+          $certificate = Import-PfxCertificate -FilePath certificate/certificate.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $password
+          $configuration = @{
+            bundle = @{
+              windows = @{
+                certificateThumbprint = $certificate.Thumbprint
+                digestAlgorithm = "sha256"
+                timestampUrl = "http://timestamp.digicert.com"
+              }
+            }
+          } | ConvertTo-Json -Depth 5
+          Set-Content -Path apps/desktop/src-tauri/tauri.windows-ci.conf.json -Value $configuration
+      - run: npm run check
+      - run: cargo test --manifest-path apps/desktop/src-tauri/Cargo.toml
+      - run: npm run sidecar:build
+      - uses: tauri-apps/tauri-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: apps/desktop
+          args: ${{ matrix.tauri_args }}
+          tagName: v__VERSION__
+          releaseName: La Agencia v__VERSION__
+          releaseBody: Experimental signed desktop package. See CHANGELOG.md and SECURITY.md.
+          releaseDraft: true
+          prerelease: true
+          includeUpdaterJson: true
+      - name: Verify macOS signature, notarization and launch
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          app="$(find apps/desktop/src-tauri/target/release/bundle -name 'La Agencia.app' -print -quit)"
+          test -n "$app"
+          codesign --verify --deep --strict --verbose=2 "$app"
+          spctl --assess --type execute --verbose=2 "$app"
+          xcrun stapler validate "$app"
+          open "$app"
+          sleep 8
+          pgrep -f 'La Agencia' >/dev/null
+          pkill -f 'La Agencia' || true
+      - name: Install and launch Linux package
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          deb="$(find apps/desktop/src-tauri/target/release/bundle -name '*.deb' -print -quit)"
+          test -n "$deb"
+          sudo apt-get install -y "$deb"
+          timeout 20s xvfb-run -a la-agencia || test "$?" -eq 124
+          dpkg -s la-agencia | grep -q 'Status: install ok installed'
+      - name: Install and launch Windows package
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem apps/desktop/src-tauri/target/release/bundle -Recurse -Filter "*-setup.exe" | Select-Object -First 1
+          if (-not $installer) { throw "NSIS installer not found" }
+          $process = Start-Process -FilePath $installer.FullName -ArgumentList "/S" -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw "Installer failed with $($process.ExitCode)" }
+          $entry = Get-ChildItem "$env:LOCALAPPDATA" -Recurse -Filter "la-agencia.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $entry) { throw "Installed executable not found" }
+          $app = Start-Process -FilePath $entry.FullName -PassThru
+          Start-Sleep -Seconds 8
+          if ($app.HasExited) { throw "Installed application exited during smoke test" }
+          Stop-Process -Id $app.Id -Force

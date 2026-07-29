@@ -1,0 +1,31 @@
+name: Release SBOM
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx --yes @cyclonedx/cyclonedx-npm@4.1.1 --output-file sbom-npm.json
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo install cargo-cyclonedx --version 0.5.7 --locked
+      - run: cargo cyclonedx --manifest-path apps/desktop/src-tauri/Cargo.toml --format json
+      - run: mv apps/desktop/src-tauri/la-agencia.cdx.json sbom-cargo.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: |
+            sbom-npm.json
+            sbom-cargo.json

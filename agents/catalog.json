@@ -1,0 +1,1797 @@
+{
+  "version": "0.2.0",
+  "count": 168,
+  "types": {
+    "core": {
+      "label": "Núcleo de la consultora",
+      "categories": {
+        "leadership": [
+          "product-owner",
+          "tech-lead",
+          "usage-sentinel",
+          "orchestrator-router"
+        ],
+        "guides": [
+          "onboarding-guide",
+          "office-concierge"
+        ]
+      }
+    },
+    "engineering": {
+      "label": "Ingeniería",
+      "categories": {
+        "architecture": [
+          "software-architect",
+          "system-designer",
+          "api-contract"
+        ],
+        "frontend": [
+          "frontend-core",
+          "frontend-payments-ui",
+          "frontend-auth-ui",
+          "frontend-forms",
+          "frontend-a11y",
+          "frontend-perf",
+          "frontend-design-system",
+          "frontend-realtime",
+          "frontend-admin",
+          "frontend-booking",
+          "frontend-ecommerce",
+          "frontend-testing",
+          "frontend-i18n",
+          "frontend-pwa",
+          "frontend-mobile-web",
+          "frontend-charts"
+        ],
+        "backend": [
+          "backend-api",
+          "backend-auth",
+          "backend-payments",
+          "backend-jobs",
+          "backend-webhooks",
+          "backend-email",
+          "backend-integrations",
+          "backend-caching",
+          "backend-security",
+          "backend-testing",
+          "backend-graphql",
+          "backend-multi-tenant",
+          "backend-feature-flags",
+          "backend-search",
+          "backend-files"
+        ],
+        "quality": [
+          "code-reviewer",
+          "refactorer",
+          "docs-engineer",
+          "dx-engineer",
+          "mobile-rn"
+        ]
+      }
+    },
+    "data": {
+      "label": "Datos",
+      "categories": {
+        "modeling": [
+          "data-modeler",
+          "data-migrations",
+          "data-reporting"
+        ],
+        "platforms": [
+          "data-supabase",
+          "data-sql",
+          "data-prisma",
+          "data-analytics",
+          "data-vector",
+          "data-firebase",
+          "data-mongo",
+          "data-backup"
+        ]
+      }
+    },
+    "devops": {
+      "label": "DevOps & Cloud",
+      "categories": {
+        "delivery": [
+          "devops-ci",
+          "devops-cd",
+          "devops-vercel",
+          "devops-preview",
+          "devops-docker",
+          "devops-rollback"
+        ],
+        "ops": [
+          "devops-monitoring",
+          "devops-secrets",
+          "devops-domain",
+          "devops-cost",
+          "devops-ssl",
+          "devops-cdn"
+        ]
+      }
+    },
+    "qa-security": {
+      "label": "QA & Seguridad",
+      "categories": {
+        "qa": [
+          "qa-verifier",
+          "qa-e2e",
+          "qa-acceptance",
+          "qa-regression",
+          "qa-release",
+          "qa-perf",
+          "qa-a11y-audit",
+          "qa-bug-triage"
+        ],
+        "security": [
+          "security-owasp",
+          "security-secrets",
+          "security-authz",
+          "security-gdpr",
+          "security-scan"
+        ]
+      }
+    },
+    "design": {
+      "label": "Diseño",
+      "categories": {
+        "product-design": [
+          "wireframe-designer",
+          "ux-writer",
+          "ui-designer",
+          "flow-diagrammer",
+          "design-handoff",
+          "brand-basics",
+          "empty-states",
+          "error-ux"
+        ]
+      }
+    },
+    "product": {
+      "label": "Producto",
+      "categories": {
+        "discovery": [
+          "product-discovery",
+          "product-mvp",
+          "product-stories",
+          "product-metrics",
+          "product-roadmap",
+          "product-feedback",
+          "product-persona",
+          "product-competitive",
+          "product-launch",
+          "product-experiment"
+        ]
+      }
+    },
+    "business": {
+      "label": "Negocio",
+      "categories": {
+        "strategy": [
+          "biz-model-canvas",
+          "biz-lean-canvas",
+          "biz-unit-economics",
+          "biz-pitch",
+          "biz-financial-lite",
+          "biz-okrs"
+        ],
+        "ops": [
+          "biz-ops",
+          "biz-sales-playbook",
+          "biz-customer-success",
+          "biz-support",
+          "biz-partnerships",
+          "biz-procurement"
+        ]
+      }
+    },
+    "marketing": {
+      "label": "Marketing & Growth",
+      "categories": {
+        "growth": [
+          "mkt-positioning",
+          "mkt-copy",
+          "mkt-seo",
+          "mkt-sem",
+          "mkt-email",
+          "mkt-cro",
+          "mkt-lifecycle",
+          "mkt-launch",
+          "mkt-social",
+          "mkt-analytics",
+          "mkt-content",
+          "mkt-referral",
+          "mkt-community",
+          "mkt-pr",
+          "mkt-changelog"
+        ]
+      }
+    },
+    "legal": {
+      "label": "Legal (orientativo)",
+      "categories": {
+        "compliance": [
+          "legal-privacy-policy",
+          "legal-tos",
+          "legal-cookies",
+          "legal-licenses",
+          "legal-ip",
+          "legal-dpa"
+        ]
+      }
+    },
+    "onboarding": {
+      "label": "Onboarding de servicios",
+      "categories": {
+        "coding-tools": [
+          "onboard-cursor",
+          "onboard-codex",
+          "onboard-grok-build",
+          "onboard-kimi",
+          "onboard-antigravity",
+          "onboard-github-cli"
+        ],
+        "cloud-services": [
+          "onboard-github",
+          "onboard-vercel",
+          "onboard-supabase",
+          "onboard-stripe",
+          "onboard-domain",
+          "onboard-aws",
+          "onboard-analytics"
+        ]
+      }
+    },
+    "industry": {
+      "label": "Verticales",
+      "categories": {
+        "verticals": [
+          "ind-salon",
+          "ind-restaurant",
+          "ind-clinic",
+          "ind-education",
+          "ind-ecommerce",
+          "ind-saas-b2b",
+          "ind-marketplace-local",
+          "ind-events",
+          "ind-fitness",
+          "ind-internal-tools",
+          "ind-real-estate",
+          "ind-creator",
+          "ind-logistics",
+          "ind-nonprofit"
+        ]
+      }
+    },
+    "harness-ops": {
+      "label": "Harness & Loop Ops",
+      "categories": {
+        "loops": [
+          "loop-planner",
+          "loop-recovery",
+          "context-compactor",
+          "eval-judge",
+          "blast-radius",
+          "subagent-governor",
+          "spend-controller",
+          "state-persister",
+          "worktree-isolator"
+        ]
+      }
+    }
+  },
+  "agents": [
+    {
+      "id": "product-owner",
+      "name": "Pau · Product Owner",
+      "type": "core",
+      "category": "leadership",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/core/leadership/product-owner/AGENT.md"
+    },
+    {
+      "id": "tech-lead",
+      "name": "Líder Técnico",
+      "type": "core",
+      "category": "leadership",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/core/leadership/tech-lead/AGENT.md"
+    },
+    {
+      "id": "usage-sentinel",
+      "name": "Centinela de cuotas",
+      "type": "core",
+      "category": "leadership",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/core/leadership/usage-sentinel/AGENT.md"
+    },
+    {
+      "id": "orchestrator-router",
+      "name": "Router de orquestación",
+      "type": "core",
+      "category": "leadership",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/core/leadership/orchestrator-router/AGENT.md"
+    },
+    {
+      "id": "onboarding-guide",
+      "name": "Guía de onboarding",
+      "type": "core",
+      "category": "guides",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/core/guides/onboarding-guide/AGENT.md"
+    },
+    {
+      "id": "office-concierge",
+      "name": "Conserje de la oficina",
+      "type": "core",
+      "category": "guides",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/core/guides/office-concierge/AGENT.md"
+    },
+    {
+      "id": "software-architect",
+      "name": "Arquitecto de software",
+      "type": "engineering",
+      "category": "architecture",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/architecture/software-architect/AGENT.md"
+    },
+    {
+      "id": "system-designer",
+      "name": "Diseñador de sistemas",
+      "type": "engineering",
+      "category": "architecture",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/architecture/system-designer/AGENT.md"
+    },
+    {
+      "id": "frontend-core",
+      "name": "Frontend Core",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-core/AGENT.md"
+    },
+    {
+      "id": "frontend-payments-ui",
+      "name": "UI de pagos",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-payments-ui/AGENT.md"
+    },
+    {
+      "id": "frontend-auth-ui",
+      "name": "UI de autenticación",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-auth-ui/AGENT.md"
+    },
+    {
+      "id": "frontend-forms",
+      "name": "Formularios",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-forms/AGENT.md"
+    },
+    {
+      "id": "frontend-a11y",
+      "name": "Accesibilidad web",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-a11y/AGENT.md"
+    },
+    {
+      "id": "frontend-perf",
+      "name": "Performance frontend",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-perf/AGENT.md"
+    },
+    {
+      "id": "frontend-design-system",
+      "name": "Design system",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-design-system/AGENT.md"
+    },
+    {
+      "id": "frontend-realtime",
+      "name": "Realtime UI",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-realtime/AGENT.md"
+    },
+    {
+      "id": "frontend-admin",
+      "name": "Paneles admin",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-admin/AGENT.md"
+    },
+    {
+      "id": "frontend-booking",
+      "name": "Reservas UI",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-booking/AGENT.md"
+    },
+    {
+      "id": "frontend-ecommerce",
+      "name": "E-commerce UI",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-ecommerce/AGENT.md"
+    },
+    {
+      "id": "frontend-testing",
+      "name": "Testing frontend",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-testing/AGENT.md"
+    },
+    {
+      "id": "backend-api",
+      "name": "API Designer",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-api/AGENT.md"
+    },
+    {
+      "id": "backend-auth",
+      "name": "Auth backend",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-auth/AGENT.md"
+    },
+    {
+      "id": "backend-payments",
+      "name": "Pagos backend",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-payments/AGENT.md"
+    },
+    {
+      "id": "backend-jobs",
+      "name": "Jobs y colas",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-jobs/AGENT.md"
+    },
+    {
+      "id": "backend-webhooks",
+      "name": "Webhooks",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-webhooks/AGENT.md"
+    },
+    {
+      "id": "backend-email",
+      "name": "Email transaccional",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-email/AGENT.md"
+    },
+    {
+      "id": "backend-integrations",
+      "name": "Integraciones",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-integrations/AGENT.md"
+    },
+    {
+      "id": "backend-caching",
+      "name": "Caching",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-caching/AGENT.md"
+    },
+    {
+      "id": "backend-security",
+      "name": "AppSec backend",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-security/AGENT.md"
+    },
+    {
+      "id": "backend-testing",
+      "name": "Testing backend",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-testing/AGENT.md"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code reviewer",
+      "type": "engineering",
+      "category": "quality",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/quality/code-reviewer/AGENT.md"
+    },
+    {
+      "id": "refactorer",
+      "name": "Refactorer",
+      "type": "engineering",
+      "category": "quality",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/quality/refactorer/AGENT.md"
+    },
+    {
+      "id": "docs-engineer",
+      "name": "Docs engineer",
+      "type": "engineering",
+      "category": "quality",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/engineering/quality/docs-engineer/AGENT.md"
+    },
+    {
+      "id": "data-modeler",
+      "name": "Modelador de datos",
+      "type": "data",
+      "category": "modeling",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/modeling/data-modeler/AGENT.md"
+    },
+    {
+      "id": "data-migrations",
+      "name": "Migraciones",
+      "type": "data",
+      "category": "modeling",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/modeling/data-migrations/AGENT.md"
+    },
+    {
+      "id": "data-supabase",
+      "name": "Supabase",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-supabase/AGENT.md"
+    },
+    {
+      "id": "data-sql",
+      "name": "SQL Specialist",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-sql/AGENT.md"
+    },
+    {
+      "id": "data-prisma",
+      "name": "ORM/Prisma",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-prisma/AGENT.md"
+    },
+    {
+      "id": "data-analytics",
+      "name": "Analytics events",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-analytics/AGENT.md"
+    },
+    {
+      "id": "data-vector",
+      "name": "Vector search",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-vector/AGENT.md"
+    },
+    {
+      "id": "devops-ci",
+      "name": "CI pipelines",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-ci/AGENT.md"
+    },
+    {
+      "id": "devops-cd",
+      "name": "CD / deploy",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-cd/AGENT.md"
+    },
+    {
+      "id": "devops-vercel",
+      "name": "Vercel",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-vercel/AGENT.md"
+    },
+    {
+      "id": "devops-preview",
+      "name": "Preview environments",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-preview/AGENT.md"
+    },
+    {
+      "id": "devops-docker",
+      "name": "Docker",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-docker/AGENT.md"
+    },
+    {
+      "id": "devops-monitoring",
+      "name": "Monitoring",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-monitoring/AGENT.md"
+    },
+    {
+      "id": "devops-secrets",
+      "name": "Secrets & env",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-secrets/AGENT.md"
+    },
+    {
+      "id": "devops-domain",
+      "name": "Dominios y DNS",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-domain/AGENT.md"
+    },
+    {
+      "id": "devops-cost",
+      "name": "Cloud cost",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-cost/AGENT.md"
+    },
+    {
+      "id": "qa-verifier",
+      "name": "QA Verifier",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-verifier/AGENT.md"
+    },
+    {
+      "id": "qa-e2e",
+      "name": "E2E Playwright",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-e2e/AGENT.md"
+    },
+    {
+      "id": "qa-acceptance",
+      "name": "Acceptance tester",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-acceptance/AGENT.md"
+    },
+    {
+      "id": "qa-regression",
+      "name": "Regresión",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-regression/AGENT.md"
+    },
+    {
+      "id": "qa-release",
+      "name": "Release checklist",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-release/AGENT.md"
+    },
+    {
+      "id": "security-owasp",
+      "name": "OWASP coach",
+      "type": "qa-security",
+      "category": "security",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/security/security-owasp/AGENT.md"
+    },
+    {
+      "id": "security-secrets",
+      "name": "Secrets hygiene",
+      "type": "qa-security",
+      "category": "security",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/qa-security/security/security-secrets/AGENT.md"
+    },
+    {
+      "id": "security-authz",
+      "name": "AuthZ review",
+      "type": "qa-security",
+      "category": "security",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/security/security-authz/AGENT.md"
+    },
+    {
+      "id": "security-gdpr",
+      "name": "Privacidad práctica",
+      "type": "qa-security",
+      "category": "security",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/qa-security/security/security-gdpr/AGENT.md"
+    },
+    {
+      "id": "wireframe-designer",
+      "name": "Diseñador de wireframes",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/wireframe-designer/AGENT.md"
+    },
+    {
+      "id": "ux-writer",
+      "name": "UX Writer",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/ux-writer/AGENT.md"
+    },
+    {
+      "id": "ui-designer",
+      "name": "UI Designer",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/ui-designer/AGENT.md"
+    },
+    {
+      "id": "flow-diagrammer",
+      "name": "Diagramas de flujo",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/flow-diagrammer/AGENT.md"
+    },
+    {
+      "id": "design-handoff",
+      "name": "Handoff design→dev",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/design-handoff/AGENT.md"
+    },
+    {
+      "id": "product-discovery",
+      "name": "Product discovery",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-discovery/AGENT.md"
+    },
+    {
+      "id": "product-mvp",
+      "name": "MVP shaper",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-mvp/AGENT.md"
+    },
+    {
+      "id": "product-stories",
+      "name": "User stories",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-stories/AGENT.md"
+    },
+    {
+      "id": "product-metrics",
+      "name": "Product metrics",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-metrics/AGENT.md"
+    },
+    {
+      "id": "product-roadmap",
+      "name": "Roadmap",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-roadmap/AGENT.md"
+    },
+    {
+      "id": "product-feedback",
+      "name": "Feedback synthesis",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-feedback/AGENT.md"
+    },
+    {
+      "id": "biz-model-canvas",
+      "name": "Business Model Canvas",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-model-canvas/AGENT.md"
+    },
+    {
+      "id": "biz-lean-canvas",
+      "name": "Lean Canvas",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-lean-canvas/AGENT.md"
+    },
+    {
+      "id": "biz-unit-economics",
+      "name": "Unit economics",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-unit-economics/AGENT.md"
+    },
+    {
+      "id": "biz-pitch",
+      "name": "Pitch coach",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-pitch/AGENT.md"
+    },
+    {
+      "id": "biz-ops",
+      "name": "Ops de negocio",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-ops/AGENT.md"
+    },
+    {
+      "id": "biz-sales-playbook",
+      "name": "Sales playbook",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-sales-playbook/AGENT.md"
+    },
+    {
+      "id": "biz-customer-success",
+      "name": "Customer success",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-customer-success/AGENT.md"
+    },
+    {
+      "id": "biz-support",
+      "name": "Soporte",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-support/AGENT.md"
+    },
+    {
+      "id": "mkt-positioning",
+      "name": "Positioning",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-positioning/AGENT.md"
+    },
+    {
+      "id": "mkt-copy",
+      "name": "Copywriter",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-copy/AGENT.md"
+    },
+    {
+      "id": "mkt-seo",
+      "name": "SEO content",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-seo/AGENT.md"
+    },
+    {
+      "id": "mkt-sem",
+      "name": "SEM / Ads",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-sem/AGENT.md"
+    },
+    {
+      "id": "mkt-email",
+      "name": "Email marketing",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-email/AGENT.md"
+    },
+    {
+      "id": "mkt-cro",
+      "name": "CRO",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-cro/AGENT.md"
+    },
+    {
+      "id": "mkt-lifecycle",
+      "name": "Lifecycle marketing",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-lifecycle/AGENT.md"
+    },
+    {
+      "id": "mkt-launch",
+      "name": "Launch marketing",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-launch/AGENT.md"
+    },
+    {
+      "id": "mkt-social",
+      "name": "Social media",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-social/AGENT.md"
+    },
+    {
+      "id": "mkt-analytics",
+      "name": "Marketing analytics",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-analytics/AGENT.md"
+    },
+    {
+      "id": "legal-privacy-policy",
+      "name": "Política de privacidad",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-privacy-policy/AGENT.md"
+    },
+    {
+      "id": "legal-tos",
+      "name": "Términos de servicio",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-tos/AGENT.md"
+    },
+    {
+      "id": "legal-cookies",
+      "name": "Cookies consent",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-cookies/AGENT.md"
+    },
+    {
+      "id": "legal-licenses",
+      "name": "Licencias OSS",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-licenses/AGENT.md"
+    },
+    {
+      "id": "onboard-cursor",
+      "name": "Guía Cursor / Claude Code",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-cursor/AGENT.md"
+    },
+    {
+      "id": "onboard-codex",
+      "name": "Guía Codex",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-codex/AGENT.md"
+    },
+    {
+      "id": "onboard-grok-build",
+      "name": "Guía Grok Build",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-grok-build/AGENT.md"
+    },
+    {
+      "id": "onboard-kimi",
+      "name": "Guía Kimi",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-kimi/AGENT.md"
+    },
+    {
+      "id": "onboard-antigravity",
+      "name": "Guía Antigravity",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-antigravity/AGENT.md"
+    },
+    {
+      "id": "onboard-github",
+      "name": "Guía GitHub",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-github/AGENT.md"
+    },
+    {
+      "id": "onboard-vercel",
+      "name": "Guía Vercel",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-vercel/AGENT.md"
+    },
+    {
+      "id": "onboard-supabase",
+      "name": "Guía Supabase",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-supabase/AGENT.md"
+    },
+    {
+      "id": "onboard-stripe",
+      "name": "Guía Stripe",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-stripe/AGENT.md"
+    },
+    {
+      "id": "onboard-domain",
+      "name": "Guía dominios",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-domain/AGENT.md"
+    },
+    {
+      "id": "ind-salon",
+      "name": "Peluquerías / belleza",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-salon/AGENT.md"
+    },
+    {
+      "id": "ind-restaurant",
+      "name": "Restaurantes",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-restaurant/AGENT.md"
+    },
+    {
+      "id": "ind-clinic",
+      "name": "Clínicas",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-clinic/AGENT.md"
+    },
+    {
+      "id": "ind-education",
+      "name": "Educación",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-education/AGENT.md"
+    },
+    {
+      "id": "ind-ecommerce",
+      "name": "E-commerce general",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-ecommerce/AGENT.md"
+    },
+    {
+      "id": "ind-saas-b2b",
+      "name": "SaaS B2B",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-saas-b2b/AGENT.md"
+    },
+    {
+      "id": "ind-marketplace-local",
+      "name": "Marketplace local",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-marketplace-local/AGENT.md"
+    },
+    {
+      "id": "ind-events",
+      "name": "Eventos",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-events/AGENT.md"
+    },
+    {
+      "id": "ind-fitness",
+      "name": "Fitness",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-fitness/AGENT.md"
+    },
+    {
+      "id": "ind-internal-tools",
+      "name": "Herramientas internas",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-internal-tools/AGENT.md"
+    },
+    {
+      "id": "loop-planner",
+      "name": "Loop Planner",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/loop-planner/AGENT.md"
+    },
+    {
+      "id": "loop-recovery",
+      "name": "Loop Recovery",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/loop-recovery/AGENT.md"
+    },
+    {
+      "id": "context-compactor",
+      "name": "Context Compactor",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/context-compactor/AGENT.md"
+    },
+    {
+      "id": "eval-judge",
+      "name": "Eval Judge",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/eval-judge/AGENT.md"
+    },
+    {
+      "id": "blast-radius",
+      "name": "Blast Radius Guard",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/blast-radius/AGENT.md"
+    },
+    {
+      "id": "frontend-i18n",
+      "name": "i18n Frontend",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-i18n/AGENT.md"
+    },
+    {
+      "id": "frontend-pwa",
+      "name": "PWA",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-pwa/AGENT.md"
+    },
+    {
+      "id": "frontend-mobile-web",
+      "name": "Mobile web",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-mobile-web/AGENT.md"
+    },
+    {
+      "id": "frontend-charts",
+      "name": "Charts UI",
+      "type": "engineering",
+      "category": "frontend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/frontend/frontend-charts/AGENT.md"
+    },
+    {
+      "id": "backend-graphql",
+      "name": "GraphQL",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-graphql/AGENT.md"
+    },
+    {
+      "id": "backend-multi-tenant",
+      "name": "Multi-tenant",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-multi-tenant/AGENT.md"
+    },
+    {
+      "id": "backend-feature-flags",
+      "name": "Feature flags",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-feature-flags/AGENT.md"
+    },
+    {
+      "id": "backend-search",
+      "name": "Search backend",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-search/AGENT.md"
+    },
+    {
+      "id": "backend-files",
+      "name": "File storage",
+      "type": "engineering",
+      "category": "backend",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/backend/backend-files/AGENT.md"
+    },
+    {
+      "id": "api-contract",
+      "name": "API Contract Owner",
+      "type": "engineering",
+      "category": "architecture",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/architecture/api-contract/AGENT.md"
+    },
+    {
+      "id": "dx-engineer",
+      "name": "DX Engineer",
+      "type": "engineering",
+      "category": "quality",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/engineering/quality/dx-engineer/AGENT.md"
+    },
+    {
+      "id": "mobile-rn",
+      "name": "React Native",
+      "type": "engineering",
+      "category": "quality",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/engineering/quality/mobile-rn/AGENT.md"
+    },
+    {
+      "id": "data-firebase",
+      "name": "Firebase",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-firebase/AGENT.md"
+    },
+    {
+      "id": "data-mongo",
+      "name": "MongoDB",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-mongo/AGENT.md"
+    },
+    {
+      "id": "data-backup",
+      "name": "Backups",
+      "type": "data",
+      "category": "platforms",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/data/platforms/data-backup/AGENT.md"
+    },
+    {
+      "id": "data-reporting",
+      "name": "Reporting",
+      "type": "data",
+      "category": "modeling",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/data/modeling/data-reporting/AGENT.md"
+    },
+    {
+      "id": "devops-rollback",
+      "name": "Rollback plan",
+      "type": "devops",
+      "category": "delivery",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/delivery/devops-rollback/AGENT.md"
+    },
+    {
+      "id": "devops-ssl",
+      "name": "SSL/TLS",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-ssl/AGENT.md"
+    },
+    {
+      "id": "devops-cdn",
+      "name": "CDN",
+      "type": "devops",
+      "category": "ops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/devops/ops/devops-cdn/AGENT.md"
+    },
+    {
+      "id": "qa-perf",
+      "name": "Performance test",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-perf/AGENT.md"
+    },
+    {
+      "id": "qa-a11y-audit",
+      "name": "A11y audit",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-a11y-audit/AGENT.md"
+    },
+    {
+      "id": "qa-bug-triage",
+      "name": "Bug triage",
+      "type": "qa-security",
+      "category": "qa",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/qa-security/qa/qa-bug-triage/AGENT.md"
+    },
+    {
+      "id": "security-scan",
+      "name": "Security scan",
+      "type": "qa-security",
+      "category": "security",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/qa-security/security/security-scan/AGENT.md"
+    },
+    {
+      "id": "brand-basics",
+      "name": "Brand basics",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/brand-basics/AGENT.md"
+    },
+    {
+      "id": "empty-states",
+      "name": "Empty states",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/empty-states/AGENT.md"
+    },
+    {
+      "id": "error-ux",
+      "name": "Error UX",
+      "type": "design",
+      "category": "product-design",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/design/product-design/error-ux/AGENT.md"
+    },
+    {
+      "id": "product-persona",
+      "name": "Personas",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-persona/AGENT.md"
+    },
+    {
+      "id": "product-competitive",
+      "name": "Competitive scan",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-competitive/AGENT.md"
+    },
+    {
+      "id": "product-launch",
+      "name": "Launch checklist",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-launch/AGENT.md"
+    },
+    {
+      "id": "product-experiment",
+      "name": "Experiment design",
+      "type": "product",
+      "category": "discovery",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/product/discovery/product-experiment/AGENT.md"
+    },
+    {
+      "id": "biz-financial-lite",
+      "name": "Finanzas lite",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-financial-lite/AGENT.md"
+    },
+    {
+      "id": "biz-okrs",
+      "name": "OKRs",
+      "type": "business",
+      "category": "strategy",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/strategy/biz-okrs/AGENT.md"
+    },
+    {
+      "id": "biz-partnerships",
+      "name": "Partnerships",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-partnerships/AGENT.md"
+    },
+    {
+      "id": "biz-procurement",
+      "name": "Compras SaaS",
+      "type": "business",
+      "category": "ops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/business/ops/biz-procurement/AGENT.md"
+    },
+    {
+      "id": "mkt-content",
+      "name": "Content strategy",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-content/AGENT.md"
+    },
+    {
+      "id": "mkt-referral",
+      "name": "Referrals",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-referral/AGENT.md"
+    },
+    {
+      "id": "mkt-community",
+      "name": "Community",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-community/AGENT.md"
+    },
+    {
+      "id": "mkt-pr",
+      "name": "PR lite",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-pr/AGENT.md"
+    },
+    {
+      "id": "mkt-changelog",
+      "name": "Changelog",
+      "type": "marketing",
+      "category": "growth",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/marketing/growth/mkt-changelog/AGENT.md"
+    },
+    {
+      "id": "legal-ip",
+      "name": "IP basics",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-ip/AGENT.md"
+    },
+    {
+      "id": "legal-dpa",
+      "name": "DPA / encargados",
+      "type": "legal",
+      "category": "compliance",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/legal/compliance/legal-dpa/AGENT.md"
+    },
+    {
+      "id": "onboard-aws",
+      "name": "Guía AWS básica",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-aws/AGENT.md"
+    },
+    {
+      "id": "onboard-analytics",
+      "name": "Guía Analytics",
+      "type": "onboarding",
+      "category": "cloud-services",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/cloud-services/onboard-analytics/AGENT.md"
+    },
+    {
+      "id": "onboard-github-cli",
+      "name": "Guía GitHub CLI",
+      "type": "onboarding",
+      "category": "coding-tools",
+      "default_model_tier": "cheap",
+      "talks_to_user": true,
+      "path": "agents/onboarding/coding-tools/onboard-github-cli/AGENT.md"
+    },
+    {
+      "id": "ind-real-estate",
+      "name": "Inmobiliaria",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-real-estate/AGENT.md"
+    },
+    {
+      "id": "ind-creator",
+      "name": "Creators",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-creator/AGENT.md"
+    },
+    {
+      "id": "ind-logistics",
+      "name": "Logística lite",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-logistics/AGENT.md"
+    },
+    {
+      "id": "ind-nonprofit",
+      "name": "ONG",
+      "type": "industry",
+      "category": "verticals",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/industry/verticals/ind-nonprofit/AGENT.md"
+    },
+    {
+      "id": "subagent-governor",
+      "name": "Subagent Governor",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/subagent-governor/AGENT.md"
+    },
+    {
+      "id": "spend-controller",
+      "name": "Spend Controller",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/spend-controller/AGENT.md"
+    },
+    {
+      "id": "state-persister",
+      "name": "State Persister",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "cheap",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/state-persister/AGENT.md"
+    },
+    {
+      "id": "worktree-isolator",
+      "name": "Worktree Isolator",
+      "type": "harness-ops",
+      "category": "loops",
+      "default_model_tier": "medium",
+      "talks_to_user": false,
+      "path": "agents/harness-ops/loops/worktree-isolator/AGENT.md"
+    }
+  ]
+}

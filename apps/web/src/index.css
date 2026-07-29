@@ -1,0 +1,90 @@
+/*
+ * SPDX-FileCopyrightText: 2026 La Agencia contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background: #1a1a2e;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+.arcade-frame {
+  border: 4px solid #fffdf5;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.45);
+  background: #2a2a40;
+}
+
+.pixel-panel {
+  border: 4px solid #22223b;
+  background: #fffdf5;
+  color: #22223b;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.pixel-btn {
+  border: 3px solid #22223b;
+  background: #fffdf5;
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  padding: 10px 12px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.pixel-btn:hover {
+  background: #f3ead8;
+}
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+.pixel-btn-primary {
+  background: #ffd866;
+}
+
+.npc-tag {
+  position: absolute;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  text-align: center;
+  line-height: 1.2;
+}
+.npc-tag .tag-name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 6px;
+  color: #fffdf5;
+  text-shadow: 1px 1px 0 #000;
+}
+.npc-tag .tag-role {
+  font-size: 9px;
+  color: #ffd866;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a4e69;
+  border-radius: 4px;
+}

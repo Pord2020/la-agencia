@@ -1,0 +1,60 @@
+{
+  "$schema": "https://scala.tauri.app/config.schema.json",
+  "productName": "La Agencia",
+  "version": "0.4.0",
+  "identifier": "community.laagencia.desktop",
+  "build": {
+    "beforeBuildCommand": "",
+    "frontendDist": "../fallback"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "La Agencia",
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "createUpdaterArtifacts": true,
+    "targets": "all",
+    "externalBin": [
+      "binaries/agency-runtime"
+    ],
+    "resources": {
+      "../../../agents": "resources/agents",
+      "../../web/dist": "resources/web",
+      "../../../LICENSE": "LICENSE",
+      "../../../LICENSES": "LICENSES",
+      "../../../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md"
+    },
+    "icon": [
+      "icons/icon.png"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    },
+    "longDescription": "Consultora local de software asistida por agentes. Open source MIT.",
+    "shortDescription": "Tu consultora de agentes en el escritorio",
+    "category": "DeveloperTool"
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDIwMTU3QkMyQ0FBRTZBOTcKUldTWGFxN0t3bnNWSU1KeU54ZE1IVzZGYnBZK0YrbTNodzdHRU9OY2hSSnFiNmt3TEx6N0RKTXYK",
+      "endpoints": [
+        "https://github.com/Pord2020/la-agencia/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

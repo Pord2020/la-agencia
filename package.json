@@ -1,0 +1,56 @@
+{
+  "name": "la-agencia",
+  "private": true,
+  "type": "module",
+  "version": "0.4.0",
+  "description": "Consultora de software por agentes de IA — open source, local, multi-harness",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "agency": "npm run build && node scripts/start-agency.mjs",
+    "dev": "npm run agency",
+    "start": "npm run agency",
+    "build": "npm run build -w @la-agencia/shared && npm run build -w @la-agencia/server && npm run build -w @la-agencia/web",
+    "catalog:count": "node -e \"console.log(require('./agents/catalog.json').count+' agents')\"",
+    "catalog:validate": "node scripts/validate-catalog.mjs",
+    "assets:generate": "node scripts/generate-icons.mjs",
+    "assets:check": "node scripts/generate-icons.mjs --check",
+    "sidecar:build": "npm run build && node scripts/build-sidecar.mjs",
+    "desktop:dev": "npm run sidecar:build && npm run dev -w @la-agencia/desktop",
+    "desktop:build": "npm run sidecar:build && npm run tauri -w @la-agencia/desktop -- build",
+    "typecheck": "npm run build -w @la-agencia/shared && npm run typecheck -w @la-agencia/server && npm run typecheck -w @la-agencia/web",
+    "test": "vitest run --coverage",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "format:check": "prettier --check \"apps/**/*.{ts,tsx}\" \"packages/**/*.ts\" \"scripts/**/*.mjs\" \"*.config.{js,ts}\" \"vitest.setup.ts\"",
+    "lint": "eslint .",
+    "spdx:check": "node scripts/check-spdx.mjs",
+    "reuse:check": "node scripts/run-reuse.mjs",
+    "versions:check": "node scripts/check-versions.mjs",
+    "licenses:check": "node scripts/check-licenses.mjs",
+    "audit:check": "npm audit --audit-level=high",
+    "check": "npm run format:check && npm run lint && npm run spdx:check && npm run reuse:check && npm run versions:check && npm run catalog:validate && npm run assets:check && npm run typecheck && npm run test && npm run build && npm run licenses:check && npm run audit:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.0",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@yao-pkg/pkg": "^6.21.0",
+    "concurrently": "^9.2.0",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.8.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "license": "MIT"
+}

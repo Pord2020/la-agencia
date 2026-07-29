@@ -1,0 +1,15 @@
+{
+  "name": "@la-agencia/desktop",
+  "version": "0.4.0",
+  "private": true,
+  "license": "MIT",
+  "description": "La Agencia — empaquetado Tauri (opción instalable). El core sigue siendo la app web + server local.",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0"
+  }
+}
