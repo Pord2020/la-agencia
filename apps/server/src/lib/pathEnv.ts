@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { homedir } from "node:os";
-import { join } from "node:path";
+import { delimiter, join } from "node:path";
 import { existsSync } from "node:fs";
 
 /** Directories where coding CLIs commonly live (macOS + Linux). */
@@ -26,11 +26,11 @@ export function extraBinDirs(): string[] {
 /** Ensure child processes and `which` see user-installed tools. */
 export function enrichPath() {
   const parts = new Set(
-    `${process.env.PATH || ""}:${extraBinDirs().join(":")}`
-      .split(":")
+    `${process.env.PATH || ""}${delimiter}${extraBinDirs().join(delimiter)}`
+      .split(delimiter)
       .filter(Boolean),
   );
-  process.env.PATH = [...parts].join(":");
+  process.env.PATH = [...parts].join(delimiter);
 }
 
 export function candidatePaths(binNames: string[]): string[] {
@@ -73,7 +73,7 @@ export function candidatePaths(binNames: string[]): string[] {
       out.push("/Applications/Kimi.app/Contents/MacOS/Kimi");
     }
   }
-  return out;
+  return [...new Set(out)];
 }
 
 export const MAC_APPS: Record<string, string[]> = {
