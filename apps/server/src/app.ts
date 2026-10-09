@@ -838,7 +838,7 @@ app.post("/api/projects", async (c) => {
         role: "assistant",
         agentId: "pau",
         content:
-          "¡Bienvenido! Soy **Pau** (Product Owner).\n\nCamina por la oficina y acércate a alguien. Pulsa **F** o **A** para hablar:\n· **Pau** — negocio y entregas\n· **Alex** — técnico (orquesta al equipo)\n· **Ana** — cuentas y pasos manuales (GitHub, AWS…)\n\nLos demás líderes (Maya, Leo, Nora, Sam) llevan marketing, diseño, legal y QA. Los subagentes trabajan en suboficinas: tú solo hablas con líderes.",
+          "¡Bienvenido! Soy **Pau** (Product Owner).\n\nCamina por la oficina y acércate a alguien. Pulsa **F** o **E** para hablar:\n· **Pau** — negocio y entregas\n· **Alex** — técnico (orquesta al equipo)\n· **Ana** — cuentas y pasos manuales (GitHub, AWS…)\n\nLos demás líderes (Maya, Leo, Nora, Sam) llevan marketing, diseño, legal y QA. Los subagentes trabajan en suboficinas: tú solo hablas con líderes.",
         createdAt: new Date().toISOString(),
       },
     ],

@@ -280,8 +280,15 @@ export const OfficeEngine = forwardRef<EngineHandle, EngineProps>(
         sfx.denied();
       };
 
+      const isTypingTarget = (target: EventTarget | null) =>
+        target instanceof HTMLElement &&
+        (target.isContentEditable ||
+          ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName));
+
       const onKeyDown = (e: KeyboardEvent) => {
         if (!propsRef.current.controlsEnabled) return;
+        // Let form fields (chat input, settings) receive WASD/E/F/space.
+        if (isTypingTarget(e.target)) return;
         const dir = keyMap[e.key];
         if (dir) {
           e.preventDefault();
