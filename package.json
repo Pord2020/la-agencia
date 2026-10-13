@@ -40,7 +40,7 @@
     "@testing-library/react": "^16.3.2",
     "@vitest/coverage-v8": "^4.1.10",
     "@yao-pkg/pkg": "^6.21.0",
-    "concurrently": "^9.2.0",
+    "concurrently": "^9.2.5",
     "esbuild": "^0.28.1",
     "eslint": "^10.8.0",
     "jsdom": "^26.1.0",
